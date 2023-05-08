@@ -4,8 +4,8 @@ export default class LivroController {
   static listarLivros = (req, res) => {
     livros
       .find()
-      .populate('autor')
-      .execute((err, livros) => {
+      .populate('autores')
+      .exec((err, livros) => {
         res.status(200).json(livros);
       });
   };
